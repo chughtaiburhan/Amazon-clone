@@ -11,6 +11,12 @@
     min-width: 100px;
     background-color: white;
     z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth animation */
+  }
+  .product:hover {
+    transform: scale(1.01); /* Slightly scale up the product */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a lifted effect */
+    cursor: pointer;
   }
   
   .product__rating {

@@ -1,10 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";  // Import from 'react-dom/client' for createRoot
+import "./index.css";
+import App from "./App";
+import reducer, { initialState } from "./reducer";
+import { StateProvider } from "./StateProvider";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// Create a root element using createRoot
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// Use root.render() instead of ReactDOM.render()
+root.render(
+  <React.StrictMode>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+    </StateProvider>
+  </React.StrictMode>
+);
